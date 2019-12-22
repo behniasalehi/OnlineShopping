@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DigiKala.Model.DomainModel.POCO
+namespace OnlineShopping.Model.DomainModel.POCO
 {
     public class CategoryCrud
     {
@@ -17,7 +17,7 @@ namespace DigiKala.Model.DomainModel.POCO
         #region [- Select() -]
         public List<Helper.SPHelper.Category.SelectCategory> Select()
         {
-            using (var context = new DTO.EF.DigiKalaEntities())
+            using (var context = new DTO.EF.OnlineShoppingEntities())
             {
                 List<Helper.SPHelper.Category.SelectCategory> list_Category = new List<Helper.SPHelper.Category.SelectCategory>();
                 try
