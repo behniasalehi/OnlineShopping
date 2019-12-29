@@ -124,16 +124,11 @@
           <FunctionImport Name="usp_Create_Category_Table" />
           <FunctionImport Name="usp_Create_Person_Table" />
           <FunctionImport Name="usp_Create_Product_Table" />
-          <FunctionImport Name="usp_Select_Category" ReturnType="Collection(OnlineShoppingModel.usp_Select_Category_Result)" />
+          <FunctionImport Name="usp_Select_Category" />
           <FunctionImport Name="usp_Insert_Category">
           <Parameter Name="message" Mode="InOut" Type="String" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="usp_Select_Category_Result">
-          <Property Type="Int32" Name="CategoryId" Nullable="false" />
-          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Descriptions" Nullable="true" MaxLength="100" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -178,13 +173,6 @@
           <FunctionImportMapping FunctionImportName="usp_Create_Person_Table" FunctionName="OnlineShoppingModel.Store.usp_Create_Person_Table" />
           <FunctionImportMapping FunctionImportName="usp_Create_Product_Table" FunctionName="OnlineShoppingModel.Store.usp_Create_Product_Table" />
           <FunctionImportMapping FunctionImportName="usp_Select_Category" FunctionName="OnlineShoppingModel.Store.usp_Select_Category">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="OnlineShoppingModel.usp_Select_Category_Result">
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="usp_Insert_Category" FunctionName="OnlineShoppingModel.Store.usp_Insert_Category" />
         </EntityContainerMapping>
