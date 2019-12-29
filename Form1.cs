@@ -19,6 +19,7 @@ namespace OnlineShopping
             ReF_CategoryViewModel = new ViewModel.Category.CategoryViewModel();
         }
         #endregion
+       
 
         public ViewModel.Category.CategoryViewModel ReF_CategoryViewModel { get; set; }
         #region [- BtnRefresh_Click -]
@@ -27,5 +28,15 @@ namespace OnlineShopping
             dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
         }
         #endregion
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+            List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory = new List<Model.Helper.SPHelper.Category.InsertCategory>();
+            listInsertCategory.Add(txtCategoryName.Text);
+            listInsertCategory.Add(txtDescriptions.Text);
+            ReF_CategoryViewModel.Save(listInsertCategory);
+
+        }
     }
 }

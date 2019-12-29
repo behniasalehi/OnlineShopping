@@ -41,15 +41,9 @@ namespace OnlineShopping.Model.DomainModel.POCO
             }
         }
 
-        internal void SaveBySp(List<object> list, object categoryList)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        internal void SaveBySp(List<object> list, object listInsertCategory)
-        {
-            throw new NotImplementedException();
-        }
+      
         #endregion
         #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) ]
         public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)

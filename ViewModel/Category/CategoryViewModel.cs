@@ -14,7 +14,6 @@ namespace OnlineShopping.ViewModel.Category
             Ref_CatgoryCrud = new Model.DomainModel.POCO.CategoryCrud();
         }
         #endregion
-        public List<Model.Helper.SPHelper.Category.InsertCategory> CategoryList { get; set; }
         public Model.DomainModel.POCO.CategoryCrud Ref_CatgoryCrud { get; set; }
         #region [-  FillGrid() -]
         public dynamic FillGrid()
@@ -22,9 +21,9 @@ namespace OnlineShopping.ViewModel.Category
             return Ref_CatgoryCrud.Select();
         }
         #endregion
-        public void Save()
+        public void Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
-            Ref_CatgoryCrud.SaveBySp(CategoryList);
+            Ref_CatgoryCrud.SaveBySp(listInsertCategory);
         }
 
     }
