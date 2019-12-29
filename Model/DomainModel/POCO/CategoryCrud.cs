@@ -23,7 +23,7 @@ namespace OnlineShopping.Model.DomainModel.POCO
                 try
                 {
                     list_Category = context.Database.SqlQuery<Helper.SPHelper.Category.SelectCategory>
-                        ("Exec dbo.usp_Select_Category").ToList();
+                        (Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Select).ToList();
                 }
                 catch (Exception)
                 {
@@ -40,6 +40,42 @@ namespace OnlineShopping.Model.DomainModel.POCO
                 return list_Category;
             }
         }
+
+        internal void SaveBySp(List<object> list, object categoryList)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void SaveBySp(List<object> list, object listInsertCategory)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+        #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) ]
+        public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
+        {
+            using (var context = new DTO.EF.OnlineShoppingEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Insert,
+                  Model.Helper.SPHelper.Category.CategorySpHelper.SetInsertParameters(listInsertCategory));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        } 
+        #endregion
+
     }
 }

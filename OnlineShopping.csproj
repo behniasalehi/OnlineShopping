@@ -89,6 +89,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DomainModel\POCO\CategoryCrud.cs" />
+    <Compile Include="Model\Helper\ModelHelper.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\CategorySpHelper.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
