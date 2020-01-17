@@ -45,6 +45,7 @@ namespace OnlineShopping.Model.DomainModel.POCO
 
       
         #endregion
+
         #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) ]
         public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
