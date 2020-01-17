@@ -123,14 +123,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvCategory;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TextBox txtDescriptions;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btndelete;
+        public System.Windows.Forms.DataGridView dgvCategory;
     }
 }
 

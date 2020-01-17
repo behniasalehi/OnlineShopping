@@ -33,6 +33,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{1A
 		udt_Update_Category.sql = udt_Update_Category.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{B0121BA1-295E-41D0-B632-190B95A068F4}"
+	ProjectSection(SolutionItems) = preProject
+		usp_Select_CategoryName.sql = usp_Select_CategoryName.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +58,7 @@ Global
 		{CBB479BC-7AC7-4680-9295-8FEE4EC2A694} = {4935A62F-65DD-488C-AC56-F69630B7B826}
 		{7990A17F-2ABB-4946-8C76-4D78143A6EB7} = {4935A62F-65DD-488C-AC56-F69630B7B826}
 		{1A7AECA1-3336-4431-95A0-23139AB9E6CC} = {DC12BD5A-5217-4910-A3F3-258260DD8EE0}
+		{B0121BA1-295E-41D0-B632-190B95A068F4} = {4935A62F-65DD-488C-AC56-F69630B7B826}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFD50B3C-CF59-4D7A-957C-C426857481A0}

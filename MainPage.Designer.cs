@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.tlsMenu = new System.Windows.Forms.ToolStrip();
             this.Category = new System.Windows.Forms.ToolStripButton();
+            this.Product = new System.Windows.Forms.ToolStripButton();
             this.tlsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,8 @@
             this.tlsMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlsMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tlsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Category});
+            this.Category,
+            this.Product});
             this.tlsMenu.Location = new System.Drawing.Point(0, 0);
             this.tlsMenu.Name = "tlsMenu";
             this.tlsMenu.Size = new System.Drawing.Size(74, 450);
@@ -55,6 +57,16 @@
             this.Category.Size = new System.Drawing.Size(71, 24);
             this.Category.Text = "Category";
             this.Category.Click += new System.EventHandler(this.Category_Click);
+            // 
+            // Product
+            // 
+            this.Product.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Product.Image = ((System.Drawing.Image)(resources.GetObject("Product.Image")));
+            this.Product.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Product.Name = "Product";
+            this.Product.Size = new System.Drawing.Size(71, 24);
+            this.Product.Text = "Product";
+            this.Product.Click += new System.EventHandler(this.Product_Click);
             // 
             // MainPage
             // 
@@ -76,5 +88,6 @@
 
         private System.Windows.Forms.ToolStrip tlsMenu;
         private System.Windows.Forms.ToolStripButton Category;
+        private System.Windows.Forms.ToolStripButton Product;
     }
 }

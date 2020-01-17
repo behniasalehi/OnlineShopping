@@ -23,5 +23,12 @@ namespace OnlineShopping
             ref_Form1.MdiParent = this;
             ref_Form1.Show();
         }
+
+        private void Product_Click(object sender, EventArgs e)
+        {
+            Product ref_Product = new Product();
+            ref_Product.MdiParent = this;
+            ref_Product.Show();
+        }
     }
 }
