@@ -25,6 +25,12 @@ namespace OnlineShopping.ViewModel.Category
         public void Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
             Ref_CatgoryCrud.SaveBySp(listInsertCategory);
+        }
+        #endregion
+        #region [- Edit(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) -]
+        public void Edit(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory)
+        {
+            Ref_CatgoryCrud.UpdateBySp(listUpdateCategory);
         } 
         #endregion
 

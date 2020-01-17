@@ -21,16 +21,20 @@ namespace OnlineShopping
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
         }
         #endregion
-       
 
+
+        #region [- props -]
         public ViewModel.Category.CategoryViewModel ReF_CategoryViewModel { get; set; }
         public Model.Helper.SPHelper.Category.InsertCategory Ref_Category { get; set; }
         public List<Model.Helper.SPHelper.Category.InsertCategory> Categories { get; set; }
+        public Edit Ref_Edit { get; set; }
+        #endregion
 
         #region [- BtnRefresh_Click -]
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
+            btnEdit.Enabled = true;
         }
         #endregion
 
@@ -41,6 +45,20 @@ namespace OnlineShopping
             Ref_Category.Descriptions = txtDescriptions.Text;
             Categories.Add(Ref_Category);
             ReF_CategoryViewModel.Save(Categories);
+        }
+        #endregion
+
+        #region [- BtnEdit_Click -]
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvCategory.Rows.Count != 0)
+            {
+                Ref_Edit = new Edit();
+                Ref_Edit.txtEditId.Text = Convert.ToString(dgvCategory[0, dgvCategory.CurrentRow.Index].Value);
+                Ref_Edit.txtCategoryNameEdit.Text = Convert.ToString(dgvCategory[1, dgvCategory.CurrentRow.Index].Value);
+                Ref_Edit.txtDescriptionsEdit.Text = Convert.ToString(dgvCategory[2, dgvCategory.CurrentRow.Index].Value);
+                Ref_Edit.Show();
+            }
         } 
         #endregion
     }

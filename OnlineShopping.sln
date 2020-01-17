@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{CB
 	ProjectSection(SolutionItems) = preProject
 		usp_Insert_Category.sql = usp_Insert_Category.sql
 		usp_Select_Category.sql = usp_Select_Category.sql
+		usp_Update_Category.sql = usp_Update_Category.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{7990A17F-2ABB-4946-8C76-4D78143A6EB7}"
@@ -27,6 +28,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{1A7AECA1-3336-4431-95A0-23139AB9E6CC}"
 	ProjectSection(SolutionItems) = preProject
 		udt_Insert_Category.sql = udt_Insert_Category.sql
+		udt_Update_Category.sql = udt_Update_Category.sql
 	EndProjectSection
 EndProject
 Global

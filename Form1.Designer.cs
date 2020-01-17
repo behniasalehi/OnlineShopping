@@ -33,6 +33,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.txtDescriptions = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +48,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(23, 58);
+            this.btnRefresh.Location = new System.Drawing.Point(632, 177);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 30);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -57,7 +58,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(23, 88);
+            this.btnSave.Location = new System.Drawing.Point(713, 177);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 30);
             this.btnSave.TabIndex = 2;
@@ -67,23 +68,35 @@
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(248, 28);
+            this.txtCategoryName.Location = new System.Drawing.Point(23, 27);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(100, 22);
             this.txtCategoryName.TabIndex = 3;
             // 
             // txtDescriptions
             // 
-            this.txtDescriptions.Location = new System.Drawing.Point(379, 27);
+            this.txtDescriptions.Location = new System.Drawing.Point(154, 27);
             this.txtDescriptions.Name = "txtDescriptions";
             this.txtDescriptions.Size = new System.Drawing.Size(100, 22);
             this.txtDescriptions.TabIndex = 4;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(551, 177);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 30);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtDescriptions);
             this.Controls.Add(this.txtCategoryName);
             this.Controls.Add(this.btnSave);
@@ -104,6 +117,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TextBox txtDescriptions;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 

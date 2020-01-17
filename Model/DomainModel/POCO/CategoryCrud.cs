@@ -69,7 +69,32 @@ namespace OnlineShopping.Model.DomainModel.POCO
                     }
                 }
             }
-        } 
+        }
+        #endregion
+        #region [- UpdateBySp(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) ]
+        public void UpdateBySp(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory)
+        {
+            using (var context = new DTO.EF.OnlineShoppingEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Update,
+                  Model.Helper.SPHelper.Category.CategorySpHelper.SetUpdateParameters(listUpdateCategory));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
         #endregion
 
     }

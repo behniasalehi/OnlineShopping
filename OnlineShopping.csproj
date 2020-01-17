@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +99,13 @@
     <Compile Include="Model\Helper\SPHelper\Category\CategorySpHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\UpdateCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Category\CategoryViewModel.cs" />
+    <EmbeddedResource Include="Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
