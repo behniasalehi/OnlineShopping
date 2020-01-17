@@ -6,7 +6,7 @@ AS
 begin tran 
 begin try
 insert into dbo.Category(CategoryName , Descriptions)
-select * from @InsertCategory
+select CategoryName,Descriptions from @InsertCategory
 commit tran 
 end try
 begin catch 
