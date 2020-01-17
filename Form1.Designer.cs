@@ -83,7 +83,6 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(551, 177);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 30);
@@ -94,7 +93,6 @@
             // 
             // btndelete
             // 
-            this.btndelete.Enabled = false;
             this.btndelete.Location = new System.Drawing.Point(470, 177);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(75, 30);
@@ -117,6 +115,7 @@
             this.Controls.Add(this.dgvCategory);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

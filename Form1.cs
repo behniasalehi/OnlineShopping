@@ -38,8 +38,7 @@ namespace OnlineShopping
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
-            btnEdit.Enabled = true;
-            btndelete.Enabled = true;
+            
         }
         #endregion
 
@@ -50,6 +49,7 @@ namespace OnlineShopping
             Ref_Category.Descriptions = txtDescriptions.Text;
             Categories.Add(Ref_Category);
             ReF_CategoryViewModel.Save(Categories);
+            dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
             Categories.Clear();
         }
         #endregion
@@ -81,7 +81,15 @@ namespace OnlineShopping
                 dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
                 DeleteCategories.Clear();
             }
-            
+
+        }
+        #endregion
+
+        #region [- Form1_Load -]
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
+           
         } 
         #endregion
     }
