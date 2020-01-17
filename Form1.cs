@@ -19,6 +19,8 @@ namespace OnlineShopping
             ReF_CategoryViewModel = new ViewModel.Category.CategoryViewModel();
             Ref_Category = new Model.Helper.SPHelper.Category.InsertCategory();
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
+            Ref_Category_Delete = new Model.Helper.SPHelper.Category.DeleteCategory();
+            DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
         }
         #endregion
 
@@ -28,6 +30,8 @@ namespace OnlineShopping
         public Model.Helper.SPHelper.Category.InsertCategory Ref_Category { get; set; }
         public List<Model.Helper.SPHelper.Category.InsertCategory> Categories { get; set; }
         public Edit Ref_Edit { get; set; }
+        public Model.Helper.SPHelper.Category.DeleteCategory Ref_Category_Delete { get; set; }
+        public List<Model.Helper.SPHelper.Category.DeleteCategory> DeleteCategories { get; set; }
         #endregion
 
         #region [- BtnRefresh_Click -]
@@ -35,6 +39,7 @@ namespace OnlineShopping
         {
             dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
             btnEdit.Enabled = true;
+            btndelete.Enabled = true;
         }
         #endregion
 
@@ -45,6 +50,7 @@ namespace OnlineShopping
             Ref_Category.Descriptions = txtDescriptions.Text;
             Categories.Add(Ref_Category);
             ReF_CategoryViewModel.Save(Categories);
+            Categories.Clear();
         }
         #endregion
 
@@ -59,6 +65,23 @@ namespace OnlineShopping
                 Ref_Edit.txtDescriptionsEdit.Text = Convert.ToString(dgvCategory[2, dgvCategory.CurrentRow.Index].Value);
                 Ref_Edit.Show();
             }
+        }
+        #endregion
+
+        #region [- Btndelete_Click -]
+        private void Btndelete_Click(object sender, EventArgs e)
+        {
+            Ref_Category_Delete.Id = Convert.ToInt32(dgvCategory[0, dgvCategory.CurrentRow.Index].Value);
+            DialogResult res = MessageBox.Show("Are you sure ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                DeleteCategories.Add(Ref_Category_Delete);
+                ReF_CategoryViewModel.Delete(DeleteCategories);
+                MessageBox.Show("deleted");
+                dgvCategory.DataSource = ReF_CategoryViewModel.FillGrid();
+                DeleteCategories.Clear();
+            }
+            
         } 
         #endregion
     }

@@ -46,7 +46,7 @@ namespace OnlineShopping.Model.DomainModel.POCO
       
         #endregion
 
-        #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) ]
+        #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
         public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
             using (var context = new DTO.EF.OnlineShoppingEntities())
@@ -71,7 +71,7 @@ namespace OnlineShopping.Model.DomainModel.POCO
             }
         }
         #endregion
-        #region [- UpdateBySp(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) ]
+        #region [- UpdateBySp(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) -]
         public void UpdateBySp(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory)
         {
             using (var context = new DTO.EF.OnlineShoppingEntities())
@@ -96,6 +96,32 @@ namespace OnlineShopping.Model.DomainModel.POCO
             }
         }
         #endregion
+        #region [- DeleteBySp(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory) -]
+        public void DeleteBySp(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory)
+        {
+            using (var context = new DTO.EF.OnlineShoppingEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Delete,
+                  Model.Helper.SPHelper.Category.CategorySpHelper.SetDeleteParameters(listDeleteCategory));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
+
 
     }
 }

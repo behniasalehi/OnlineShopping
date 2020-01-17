@@ -34,6 +34,7 @@
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.txtDescriptions = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,23 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
+            // btndelete
+            // 
+            this.btndelete.Enabled = false;
+            this.btndelete.Location = new System.Drawing.Point(470, 177);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 30);
+            this.btndelete.TabIndex = 7;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.Btndelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtDescriptions);
             this.Controls.Add(this.txtCategoryName);
@@ -118,6 +131,7 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TextBox txtDescriptions;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btndelete;
     }
 }
 
