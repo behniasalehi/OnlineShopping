@@ -12,6 +12,7 @@ namespace OnlineShopping
 {
     public partial class Edit : Form
     {
+        #region [- ctor -]
         public Edit()
         {
             InitializeComponent();
@@ -19,7 +20,8 @@ namespace OnlineShopping
             Ref_CategoryUpdate = new Model.Helper.SPHelper.Category.UpdateCategory();
             UpdateCategories = new List<Model.Helper.SPHelper.Category.UpdateCategory>();
 
-        }
+        } 
+        #endregion
         #region [- props -]
         public ViewModel.Category.CategoryViewModel Ref_CategoryViewModel { get; set; }
         public Model.Helper.SPHelper.Category.UpdateCategory Ref_CategoryUpdate { get; set; }
@@ -33,7 +35,8 @@ namespace OnlineShopping
             Ref_CategoryUpdate.Descriptions = txtDescriptionsEdit.Text;
             UpdateCategories.Add(Ref_CategoryUpdate);
             Ref_CategoryViewModel.Edit(UpdateCategories);
-            MessageBox.Show("done");
+            this.Close();
+            MessageBox.Show("please enter Refresh Button !!!");
         } 
         #endregion
     }
