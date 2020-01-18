@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.CategoryList = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,19 +41,17 @@
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.Counter = new System.Windows.Forms.NumericUpDown();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.btnBrowseImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Counter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // CategoryList
             // 
@@ -78,7 +74,7 @@
             this.CategoryList.EditorControl.MasterTemplate.EnableGrouping = false;
             this.CategoryList.EditorControl.MasterTemplate.ShowColumnHeaders = false;
             this.CategoryList.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.CategoryList.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.CategoryList.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.CategoryList.EditorControl.Name = "NestedRadGridView";
             this.CategoryList.EditorControl.ReadOnly = true;
             this.CategoryList.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -94,10 +90,10 @@
             // dgvProduct
             // 
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(-9, 254);
+            this.dgvProduct.Location = new System.Drawing.Point(-9, 288);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(805, 193);
+            this.dgvProduct.Size = new System.Drawing.Size(1120, 159);
             this.dgvProduct.TabIndex = 3;
             // 
             // label1
@@ -182,19 +178,46 @@
             this.Counter.Size = new System.Drawing.Size(120, 22);
             this.Counter.TabIndex = 13;
             // 
-            // entityCommand1
+            // btnBrowseImage
             // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
+            this.btnBrowseImage.Location = new System.Drawing.Point(573, 95);
+            this.btnBrowseImage.Name = "btnBrowseImage";
+            this.btnBrowseImage.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseImage.TabIndex = 14;
+            this.btnBrowseImage.Text = "Browse";
+            this.btnBrowseImage.UseVisualStyleBackColor = true;
+            this.btnBrowseImage.Click += new System.EventHandler(this.BtnBrowseImage_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(725, 68);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 115);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(472, 231);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 28);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1113, 450);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnBrowseImage);
             this.Controls.Add(this.Counter);
             this.Controls.Add(this.txtDiscount);
             this.Controls.Add(this.txtUnitPrice);
@@ -215,13 +238,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Counter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ImageList imageList1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox CategoryList;
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Label label1;
@@ -234,6 +257,9 @@
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.NumericUpDown Counter;
-        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Button btnBrowseImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSave;
     }
 }
