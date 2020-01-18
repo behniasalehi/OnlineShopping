@@ -95,5 +95,8 @@ namespace OnlineShopping.Model.DomainModel.POCO
             }
         }
         #endregion
+
+
+        
     }
 }

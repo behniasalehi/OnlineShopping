@@ -44,7 +44,7 @@
             this.btnBrowseImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryList.EditorControl.MasterTemplate)).BeginInit();
@@ -59,12 +59,13 @@
             // CategoryList.NestedRadGridView
             // 
             this.CategoryList.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CategoryList.EditorControl.BeginEditMode = Telerik.WinControls.RadGridViewBeginEditMode.BeginEditProgrammatically;
             this.CategoryList.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.CategoryList.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.CategoryList.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryList.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CategoryList.EditorControl.Location = new System.Drawing.Point(0, 0);
-            this.CategoryList.EditorControl.Margin = new System.Windows.Forms.Padding(4);
+            this.CategoryList.EditorControl.Margin = new System.Windows.Forms.Padding(5);
             // 
             // 
             // 
@@ -72,6 +73,7 @@
             this.CategoryList.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.CategoryList.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.CategoryList.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CategoryList.EditorControl.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.CategoryList.EditorControl.MasterTemplate.ShowColumnHeaders = false;
             this.CategoryList.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.CategoryList.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
@@ -200,22 +202,22 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSave
+            // btnSaveProduct
             // 
-            this.btnSave.Location = new System.Drawing.Point(472, 231);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 28);
-            this.btnSave.TabIndex = 16;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            this.btnSaveProduct.Location = new System.Drawing.Point(466, 259);
+            this.btnSaveProduct.Name = "btnSaveProduct";
+            this.btnSaveProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveProduct.TabIndex = 16;
+            this.btnSaveProduct.Text = "Save";
+            this.btnSaveProduct.UseVisualStyleBackColor = true;
+            this.btnSaveProduct.Click += new System.EventHandler(this.BtnSaveProduct_Click);
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 450);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSaveProduct);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBrowseImage);
             this.Controls.Add(this.Counter);
@@ -260,6 +262,6 @@
         private System.Windows.Forms.Button btnBrowseImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveProduct;
     }
 }

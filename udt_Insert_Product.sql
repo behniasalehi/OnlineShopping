@@ -6,5 +6,7 @@ Create Type dbo.udt_Insert_Product as Table(
 					UnitPrice money  , 
 					Quantiy int  , 
 					Discount money ,
-					ProductImage varbinary(max)		
+					ProductImage varbinary(max)
+						
 )
+--ProductImage varbinary(max)	

@@ -27,7 +27,6 @@ namespace OnlineShopping.ViewModel.Product
             return Ref_ProductCrud.SelectProduct();
         }
         #endregion
-
         #region [- Save(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct) -]
         public void Save(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct)
         {

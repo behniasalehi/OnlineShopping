@@ -1,10 +1,10 @@
 ﻿use OnlineShopping
 go
-create PROCEDURE dbo.usp_Select_CategoryName
+alter PROCEDURE dbo.usp_Select_CategoryName
 AS
 begin tran 
 begin try
-	select  c.CategoryName 
+	select  c.CategoryName , c.CategoryId
 	from dbo.Category c 
 	print'Successful'
 commit tran 

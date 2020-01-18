@@ -15,10 +15,10 @@ namespace OnlineShopping.Model.Helper.SPHelper.Product
         }
         #endregion
         public int Category_Ref { get; set; }
+        public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }
         public int Quantiy { get; set; }
         public decimal Discount { get; set; }
-        public string ProductName { get; set; }
         public byte[] ProductImage { get; set; }
     }
 }
