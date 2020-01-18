@@ -24,6 +24,7 @@ namespace OnlineShopping
         private void Product_Load(object sender, EventArgs e)
         {
             CategoryList.DataSource = Ref_ProductViewModel.SelectCategoryName();
+            dgvProduct.DataSource = Ref_ProductViewModel.FillGrid();
         }
 
         

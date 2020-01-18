@@ -18,8 +18,21 @@ namespace OnlineShopping.ViewModel.Product
         #region [- SelectCategoryName() -]
         public dynamic SelectCategoryName()
         {
-            return Ref_ProductCrud.Select();
-        } 
+            return Ref_ProductCrud.SelectCategoryName();
+        }
+        #endregion
+        #region [- FillGrid -]
+        public dynamic FillGrid()
+        {
+            return Ref_ProductCrud.SelectProduct();
+        }
+        #endregion
+
+        #region [- Save(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct) -]
+        public void Save(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct)
+        {
+            Ref_ProductCrud.SaveBySp(listInsertProduct);
+        }
         #endregion
     }
 }

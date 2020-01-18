@@ -14,7 +14,8 @@ namespace OnlineShopping.Model.DomainModel.POCO
 
         }
         #endregion
-        public List<Helper.SPHelper.Product.SelectCategoryName> Select()
+        #region [- SelectCategoryName() -]
+        public List<Helper.SPHelper.Product.SelectCategoryName> SelectCategoryName()
         {
             using (var context = new DTO.EF.OnlineShoppingEntities())
             {
@@ -39,5 +40,60 @@ namespace OnlineShopping.Model.DomainModel.POCO
                 return list_Category;
             }
         }
+        #endregion
+
+        #region [- SelectProduct() -]
+        public List<Helper.SPHelper.Product.SelectProduct> SelectProduct()
+        {
+            using (var context = new DTO.EF.OnlineShoppingEntities())
+            {
+                List<Helper.SPHelper.Product.SelectProduct> list_Category = new List<Helper.SPHelper.Product.SelectProduct>();
+                try
+                {
+                    list_Category = context.Database.SqlQuery<Helper.SPHelper.Product.SelectProduct>
+                        (Model.Helper.SPHelper.Product.ProductSpHelper.Usp_Product_Select).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+                return list_Category;
+            }
+        }
+        #endregion
+
+        #region [- SaveBySp(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct) -]
+        public void SaveBySp(List<Model.Helper.SPHelper.Product.InsertProduct> listInsertProduct)
+        {
+            using (var context = new DTO.EF.OnlineShoppingEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Product.ProductSpHelper.Usp_Product_Insert,
+                  Model.Helper.SPHelper.Product.ProductSpHelper.SetInsertParameters(listInsertProduct));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
